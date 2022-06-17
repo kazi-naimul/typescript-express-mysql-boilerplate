@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "build",
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "target": "es6",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "allowJs": true,
+        "sourceMap": true,
+        "noImplicitAny": false,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "typeRoots": ["src/@types", "node_modules/@types/"]
+    },
+    "lib": ["es2015"],
+    "include": ["src/**/*.ts", "src/**/*.js"],
+    "exclude": ["node_modules", "build", "__tests__", "coverage"]
+}
