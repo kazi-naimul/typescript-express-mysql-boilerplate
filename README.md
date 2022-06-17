@@ -1,16 +1,16 @@
-# Boilerplate for Node-Express with sequelize ORM
+# Boilerplate for Typescript-Express with sequelize ORM
 
-A boilerplate for any enterprise rest api or service with Node.js, Express and Sequelize ORM for mysql, postgresql or others.
+A boilerplate for any enterprise rest api or service with Node.js -Typescript, Express and Sequelize ORM for mysql, postgresql or others.
 
-By running this project you will get a production ready environment with all necessary supports for validation, unit testing, socket, redis and many more.
+By running this project you will get a production ready environment with all necessary supports for validation, unit testing, socket, redis and many more.This repo is the typescript version of my another boilerplate of [Nodejs Express Mysql boilerplate](https://github.com/aoyan107/nodejs-express-mysql-boilerplate)
 
 ## Manual Installation
 
 Clone the repo:
 
 ```bash
-git clone https://github.com/aoyan107/node-express-mysql-boilerplate
-cd node-express-mysql-boilerplate
+git clone https://github.com/aoyan107/typescript-express-mysql-boilerplate
+cd typescript-express-mysql-boilerplate
 ```
 
 Install the dependencies:
@@ -113,15 +113,19 @@ src\
  |--config\         # Environment variables and configuration related things
  |--controllers\    # Route controllers (controller layer)
  |--dao\            # Data Access Object for models
+ 	|--contract\		# Contracts for all dao
+ 	|--implementation 	# Implementation of the contracts
  |--db\             # Migrations and Seed files
  |--models\         # Sequelize models (data layer)
  |--routes\         # Routes
  |--services\       # Business logic (service layer)
+  	|--contract\		# Contracts for all service
+ 	|--implementation 	# Implementation of the contracts
  |--helper\         # Helper classes and functions
  |--validations\    # Request data validation schemas
  |--app.js          # Express app
- |--cronJobs.js     # Job Scheduler
- |--index.js        # App entry point
+ |--cronJobs.ts     # Job Scheduler
+ |--index.ts        # App entry point
 ```
 
 ## License
