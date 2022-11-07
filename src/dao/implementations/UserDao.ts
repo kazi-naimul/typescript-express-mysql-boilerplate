@@ -4,7 +4,7 @@ import SuperDao from './SuperDao';
 
 const User = models.user;
 
-export default class UserDao extends SuperDao implements IUserDao{
+export default class UserDao extends SuperDao implements IUserDao {
     constructor() {
         super(User);
     }
@@ -13,7 +13,7 @@ export default class UserDao extends SuperDao implements IUserDao{
         return User.findOne({ where: { email } });
     }
 
-    async isEmailExists(email :string) {
+    async isEmailExists(email: string) {
         return User.count({ where: { email } }).then((count) => {
             if (count != 0) {
                 return true;
@@ -22,7 +22,7 @@ export default class UserDao extends SuperDao implements IUserDao{
         });
     }
 
-    async createWithTransaction(user:object, transaction:object) {
+    async createWithTransaction(user: object, transaction: object) {
         return User.create(user, { transaction });
     }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { DataTableDaoResponse } from '../../@types/apiServiceResponse';
 import { logger } from '../../config/logger';
 import ISuperDao from '../contracts/ISuperDao';

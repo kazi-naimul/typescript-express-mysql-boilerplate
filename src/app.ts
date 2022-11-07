@@ -1,7 +1,8 @@
 import cors from 'cors';
+import passport from 'passport';
 import express, { Express, NextFunction, Request, Response } from 'express';
 import httpStatus from 'http-status';
-import pg from 'pg';
+import { jwtStrategy } from './config/passport';
 import ApiError from './helper/ApiError';
 import { errorConverter, errorHandler } from './middlewares/error';
 import db from './models';
@@ -23,11 +24,15 @@ app.use(express.static(`${process.env.PWD}/public`));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.get('/api/local/v1/test', async (req, res) => {
-    res.status(200).send('Congratulations!Af Local API is working!');
+// jwt authentication
+passport.use('jwt', jwtStrategy);
+app.use(passport.initialize());
+
+app.get('/api/v1/test', async (req, res) => {
+    res.status(200).send('Congratulations!Typescript API is working!');
 });
 
-app.use('/api/local/v1', routes);
+app.use('/api/v1', routes);
 
 // send back a 404 error for any unknown api request
 app.use((req: Request, res: Response, next: NextFunction) => {
@@ -38,6 +43,5 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 app.use(errorConverter);
 // handle error
 app.use(errorHandler);
-pg.defaults.parseInt8 = true;
 
 db.sequelize.sync();

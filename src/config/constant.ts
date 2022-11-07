@@ -6,7 +6,4 @@ const userConstant = {
     STATUS_REMOVED: 2,
 };
 
-
-export {
-    userConstant,
-};
+export { userConstant };

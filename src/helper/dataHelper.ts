@@ -50,46 +50,4 @@ const randomId = (length) => {
     return result;
 };
 
-const cleanNumber = (value) => {
-    if (value === undefined || value === null) {
-        return value;
-    }
-    if (typeof value !== 'string') {
-        // eslint-disable-next-line no-param-reassign
-        value = value.toString();
-    }
-    // eslint-disable-next-line no-param-reassign
-    value = value.replace(/[^\d]/g, ''); // Replaces all spaces with hyphens.
-    const firstCharacter = value.substring(0, 1);
-    if (value.length === 10 && firstCharacter !== '1') {
-        // eslint-disable-next-line no-param-reassign
-        value = `1${value}`;
-    }
-    return value;
-};
-const getUSAreaCodeByNumber = (number) => {
-    // eslint-disable-next-line no-param-reassign
-    if (typeof number !== 'string') {
-        // eslint-disable-next-line no-param-reassign
-        number = number.toString();
-    }
-    // eslint-disable-next-line no-param-reassign
-    number = number.trim().replace('+', '');
-    const firstCharacter = number.substring(0, 1);
-    if (number.length === 11 && firstCharacter === '1') {
-        return number.substring(1, 4);
-    }
-    if (number.length === 10 && firstCharacter !== '1') {
-        return number.substring(0, 3);
-    }
-    return false;
-};
-export {
-    arrayDiff,
-    shuffleArray,
-    arrayRand,
-    randomNumberBetweenRange,
-    randomId,
-    cleanNumber,
-    getUSAreaCodeByNumber,
-};
+export { arrayDiff, shuffleArray, arrayRand, randomNumberBetweenRange, randomId };

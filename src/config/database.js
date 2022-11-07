@@ -7,7 +7,7 @@ module.exports = {
         password: process.env.DB_PASS,
         database: process.env.DB_NAME,
         host: process.env.DB_HOST,
-        dialect: 'postgres',
+        dialect: 'mysql',
         dialectOptions: {
             bigNumberStrings: true,
         },
@@ -17,7 +17,7 @@ module.exports = {
         password: process.env.DB_PASS,
         database: process.env.DB_NAME,
         host: process.env.DB_HOST,
-        dialect: 'postgres',
+        dialect: 'mysql',
         dialectOptions: {
             bigNumberStrings: true,
         },
@@ -27,7 +27,7 @@ module.exports = {
         password: process.env.DB_PASS,
         database: process.env.DB_NAME,
         host: process.env.DB_HOST,
-        dialect: 'postgres',
+        dialect: 'mysql',
         dialectOptions: {
             bigNumberStrings: true,
         },
