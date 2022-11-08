@@ -2,7 +2,7 @@ version: "2.0"
 
 services:
 
-  #  typecript application configuration
+  #  typescript application configuration
 
   typescript-backend:
     image: node:14-alpine
@@ -11,7 +11,7 @@ services:
     ports:
       - 5001:5001
     volumes:
-      - /home/aoyan/Workstation/Projects/Node/typescript-express-mysql-broilerplate:/app
+      - UPDATE_PATH:/app
     working_dir: /app
     command: sh -c "yarn install &&  yarn start:dev"
 
@@ -19,9 +19,9 @@ services:
     image: mysql:5.7
     container_name: db
     volumes:
-      - /home/ubuntu/stacks/mysql:/var/lib/mysql
+      - UPDATE_PATH:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=root123
+      - MYSQL_ROOT_PASSWORD=your-password
     restart: unless-stopped
     
   adminer:
