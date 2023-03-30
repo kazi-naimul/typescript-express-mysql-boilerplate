@@ -44,4 +44,5 @@ app.use(errorConverter);
 // handle error
 app.use(errorHandler);
 
-db.sequelize.sync();
+// Uncomment this line if you want to sync database model
+// db.sequelize.sync();
