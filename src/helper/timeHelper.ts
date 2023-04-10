@@ -48,10 +48,10 @@ export const formatTime = (
     time: string | Date | undefined = new Date(),
     formatPattern = 'yyyy-MM-dd HH:mm:ss'
 ) => {
-    let newDate: string | Date = new Date();
+    let newDate = new Date();
     if (typeof time !== undefined) {
         // eslint-disable-next-line no-param-reassign
-        newDate = time;
+        newDate = new Date(time);
     }
     if (typeof time !== 'string') {
         return format(newDate, formatPattern);
