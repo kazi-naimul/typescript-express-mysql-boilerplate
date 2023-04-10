@@ -25,7 +25,7 @@ export default class AuthService implements IAuthService {
     loginWithEmailPassword = async (email: string, password: string) => {
         try {
             let message = 'Login Successful';
-            let statusCode = httpStatus.OK;
+            let statusCode: number = httpStatus.OK;
             let user = await this.userDao.findByEmail(email);
             if (user == null) {
                 return responseHandler.returnError(
