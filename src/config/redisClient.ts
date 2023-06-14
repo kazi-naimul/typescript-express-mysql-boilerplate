@@ -9,4 +9,4 @@ if (config.redis.usePassword.toUpperCase() === 'YES') {
 }
 
 console.log('Redis Client loaded!!!');
-module.exports = redisClient;
+export default redisClient;
