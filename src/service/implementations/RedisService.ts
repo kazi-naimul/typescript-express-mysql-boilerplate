@@ -1,4 +1,4 @@
-import * as redisClient from '../../config/redisClient';
+import redisClient from '../../config/redisClient';
 import RedisHelper from '../../helper/RedisHelper';
 import { IUser } from '../../models/interfaces/IUser';
 import IRedisService from '../contracts/IRedisService';
