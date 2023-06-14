@@ -7,6 +7,7 @@ import ApiError from './helper/ApiError';
 import { errorConverter, errorHandler } from './middlewares/error';
 import db from './models';
 import routes from './route';
+import redisClient from './config/redisClient';
 
 process.env.PWD = process.cwd();
 
@@ -43,6 +44,12 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 app.use(errorConverter);
 // handle error
 app.use(errorHandler);
+
+redisClient.on('error', (err) => {
+    console.log(err);
+    redisClient.quit();
+});
+redisClient.connect();
 
 // Uncomment this line if you want to sync database model
 // db.sequelize.sync();
