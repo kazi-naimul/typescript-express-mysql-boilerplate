@@ -57,7 +57,7 @@ export default class AuthService implements IAuthService {
             blacklisted: false,
         });
         if (!refreshTokenDoc) {
-            res.status(httpStatus.NOT_FOUND).send({ message: 'User Not found!' });
+            return false;
         }
         await this.tokenDao.remove({
             token: req.body.refresh_token,
