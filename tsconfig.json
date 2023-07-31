@@ -13,9 +13,23 @@
         "strict": true,
         "forceConsistentCasingInFileNames": true,
         "skipLibCheck": true,
-        "typeRoots": ["src/@types", "node_modules/@types/"]
+        "typeRoots": ["src/@types", "node_modules/@types/"],
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["*"],
+            "@config/*": ["src/config/*"],
+            "@helper/*": ["src/helper/*"],
+            "@controllers/*": ["src/controllers/*"],
+            "@routes/*": ["src/routes/*"],
+            "@utils/*": ["src/utils/*"],
+            "@middlewares/*": ["src/middlewares/*"],
+            "@service/*": ["src/service/*"],
+            "@dao/*": ["src/dao/*"],
+            "@models/*": ["src/models/*"],
+        }
     },
     "lib": ["es2015"],
     "include": ["src/**/*.ts", "src/**/*.js"],
-    "exclude": ["node_modules", "build", "__tests__", "coverage"]
+    "exclude": ["node_modules", "build", "__tests__", "coverage"],
+   
 }

@@ -5,8 +5,8 @@
     "main": "build/index.js",
     "scripts": {
         "build": "rimraf ./build && tsc",
-        "start:dev": "nodemon",
-        "start": "npm run build && node build/index.js",
+        "start:dev": "nodemon --exec ts-node -r tsconfig-paths/register ./src/index.ts",
+        "start": "npm run build && node -r tsconfig-paths/register build/index.js",
         "test": "mocha -r ts-node/register './specs/**/*.spec.ts' --watch --watch-files './specs/**/*.spec.ts'"
     },
     "author": "Kazi Naimul Hoque (Aoyan)",
@@ -63,6 +63,7 @@
         "rimraf": "^3.0.2",
         "sequelize": "^6.18.0",
         "sequelize-cli": "^6.4.1",
+        "tsconfig-paths": "^4.2.0",
         "typescript": "^4.6.3",
         "uuidv4": "^6.2.13",
         "winston": "^3.7.2",
