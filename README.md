@@ -53,7 +53,7 @@ cp .env.example .env
 Running locally:
 
 ```bash
-yarn dev
+yarn start:dev
 ```
 
 Running in production:
