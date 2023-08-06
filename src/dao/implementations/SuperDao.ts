@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { DataTableDaoResponse } from '../../@types/apiServiceResponse';
-import { logger } from '../../config/logger';
-import ISuperDao from '../contracts/ISuperDao';
+import { logger } from '@configs/logger.js';
+import { DataTableDaoResponse } from 'apiServiceResponse.js';
+import ISuperDao from '@dao/contracts/ISuperDao';
 
 export default class SuperDao implements ISuperDao {
     private Model: any;

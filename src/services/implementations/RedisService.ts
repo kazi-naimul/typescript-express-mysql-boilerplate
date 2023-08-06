@@ -1,8 +1,8 @@
-import redisClient from '../../config/redisClient';
-import RedisHelper from '../../helper/RedisHelper';
-import { IUser } from '../../models/interfaces/IUser';
-import IRedisService from '../contracts/IRedisService';
-import { config } from '../../config/config';
+import IRedisService from '@services/contracts/IRedisService.js';
+import redisClient from '@configs/redisClient.js';
+import RedisHelper from '@helpers/RedisHelper.js';
+import { IUser } from '@models/interfaces/IUser.js';
+import { config } from '@configs/config.js';
 
 export default class RedisService implements IRedisService {
     private redisHelper: RedisHelper;

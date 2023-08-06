@@ -1,4 +1,4 @@
-FROM node:14-slim
+FROM node:18-slim
 
 WORKDIR /usr/src/app
 
@@ -13,4 +13,5 @@ RUN npm run build
 
 EXPOSE 5000
 
-CMD [ "node", "build/index.js" ]
+# Use tsconfig-paths/register when starting the app
+CMD ["node", "build/index.js"]

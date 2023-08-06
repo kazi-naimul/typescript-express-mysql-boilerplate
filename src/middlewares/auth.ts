@@ -1,9 +1,10 @@
-import { NextFunction, Request, Response } from 'express';
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import passport from 'passport';
 import httpStatus from 'http-status';
-import ApiError from '../helper/ApiError';
-import { IUser } from '../models/interfaces/IUser';
-import { jwtVerifyManually } from '../config/passport';
+import { NextFunction, Request, Response } from 'express';
+import ApiError from '@helpers/ApiError.js';
+import { IUser } from '@models/interfaces/IUser.js';
+import { jwtVerifyManually } from '@configs/passport.js';
 
 const verifyCallback =
     (req: Request, res: Response, resolve: any, reject: any) =>

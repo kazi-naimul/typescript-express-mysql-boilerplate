@@ -1,6 +1,6 @@
-import models from '../../models';
-import ITokenDao from '../contracts/ITokenDao';
-import SuperDao from './SuperDao';
+import models from '@models/index.js';
+import ITokenDao from '@dao/contracts/ITokenDao.js';
+import SuperDao from './SuperDao.js';
 
 const Token = models.token;
 

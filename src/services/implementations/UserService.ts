@@ -3,12 +3,12 @@ import httpStatus from 'http-status';
 import * as bcrypt from 'bcrypt';
 import { uuid } from 'uuidv4';
 import { Request } from 'express';
-import { userConstant } from '../../config/constant';
-import { logger } from '../../config/logger';
-import UserDao from '../../dao/implementations/UserDao';
-import responseHandler from '../../helper/responseHandler';
-import { IUser } from '../../models/interfaces/IUser';
-import IUserService from '../contracts/IUserService';
+import { logger } from '@configs/logger.js';
+import { userConstant } from '@configs/constant.js';
+import UserDao from '@dao/implementations/UserDao.js';
+import responseHandler from '@helpers/responseHandler.js';
+import { IUser } from '@models/interfaces/IUser.js';
+import IUserService from '@services/contracts/IUserService.js';
 
 export default class UserService implements IUserService {
     private userDao: UserDao;
@@ -17,8 +17,9 @@ export default class UserService implements IUserService {
         this.userDao = new UserDao();
     }
 
-    createUser = async (userBody: IUser) => {
+    createUser = async (userBodyReq: IUser) => {
         try {
+            const userBody: IUser = userBodyReq;
             let message = 'Successfully Registered the account! Please Verify your email.';
             if (await this.userDao.isEmailExists(userBody.email)) {
                 return responseHandler.returnError(httpStatus.BAD_REQUEST, 'Email already taken');
@@ -65,7 +66,7 @@ export default class UserService implements IUserService {
             // eslint-disable-next-line @typescript-eslint/naming-convention
             const { password, confirm_password, old_password } = req.body;
             let message = 'Password Successfully Updated!';
-            let statusCode = httpStatus.OK;
+            let statusCode: number = httpStatus.OK;
             if (req.userInfo === undefined) {
                 return responseHandler.returnError(httpStatus.UNAUTHORIZED, 'Please Authenticate!');
             }

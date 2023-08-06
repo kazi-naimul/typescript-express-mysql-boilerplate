@@ -1,6 +1,6 @@
 /* eslint-disable import/no-import-module-exports */
 import * as Redis from 'redis';
-import { config } from './config';
+import { config } from '@configs/config.js';
 
 const url = `redis://${config.redis.host}:${config.redis.port}`;
 const redisClient: Redis.RedisClientType = Redis.createClient({ url });

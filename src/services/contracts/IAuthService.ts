@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { ApiServiceResponse } from '../../@types/apiServiceResponse';
+import { ApiServiceResponse } from '../../types/apiServiceResponse';
 
 export default interface IAuthService {
     loginWithEmailPassword: (email: string, password: string) => Promise<ApiServiceResponse>;

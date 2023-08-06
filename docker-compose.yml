@@ -5,13 +5,13 @@ services:
   #  typescript application configuration
 
   typescript-backend:
-    image: node:14-alpine
+    image: node:18-alpine
     container_name: typescript-backend
     restart: unless-stopped
     ports:
-      - 5001:5001
+      - 6001:5000
     volumes:
-      - UPDATE_PATH:/app
+      - ./:/app
     working_dir: /app
     command: sh -c "yarn install &&  yarn start:dev"
 
@@ -19,23 +19,23 @@ services:
     image: mysql:5.7
     container_name: db
     volumes:
-      - UPDATE_PATH:/var/lib/mysql
+      - /var/lib/mysql/boilerplate:/var/lib/mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=your-password
+      - MYSQL_ROOT_PASSWORD=root123
     restart: unless-stopped
     
   adminer:
       image: adminer
       restart: always
       ports:
-        - 82:8080
+        - 84:8080
         
   redis:
       image: redis:6.2
       container_name: redis
       restart: unless-stopped
       volumes:
-          -  UPDATE_PATH:/data
+          -  /var/lib/redis/boilerplate:/data
 
 
 

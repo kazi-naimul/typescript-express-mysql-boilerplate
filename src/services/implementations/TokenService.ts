@@ -1,14 +1,14 @@
 import jwt from 'jsonwebtoken';
 import { Op } from 'sequelize';
 import { addDays, addMinutes, getUnixTime } from 'date-fns';
-import { tokenTypes } from '../../config/tokens';
-import TokenDao from '../../dao/implementations/TokenDao';
-import ITokenService from '../contracts/ITokenService';
-import RedisService from './RedisService';
-import { config } from '../../config/config';
-import { IUser } from '../../models/interfaces/IUser';
-import { parseTime } from '../../helper/timeHelper';
-import { IToken } from '../../models/interfaces/IToken';
+import { tokenTypes } from '@configs/tokens.js';
+import TokenDao from '@dao/implementations/TokenDao.js';
+import ITokenService from '@services/contracts/ITokenService.js';
+import RedisService from '@services/implementations/RedisService.js';
+import { config } from '@configs/config.js';
+import { IUser } from '@models/interfaces/IUser.js';
+import { parseTime } from '@helpers/timeHelper.js';
+import { IToken } from '@models/interfaces/IToken.js';
 
 export default class TokenService implements ITokenService {
     private tokenDao: TokenDao;

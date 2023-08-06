@@ -1,12 +1,12 @@
-import { Request, Response } from 'express';
 import httpStatus from 'http-status';
-import { ApiServiceResponse } from '../@types/apiServiceResponse';
-import { logger } from '../config/logger';
-import { tokenTypes } from '../config/tokens';
-import { IUser } from '../models/interfaces/IUser';
-import AuthService from '../service/implementations/AuthService';
-import TokenService from '../service/implementations/TokenService';
-import UserService from '../service/implementations/UserService';
+import { Request, Response } from 'express';
+import { ApiServiceResponse } from 'apiServiceResponse.js';
+import { logger } from '@configs/logger.js';
+import { tokenTypes } from '@configs/tokens.js';
+import { IUser } from '@models/interfaces/IUser.js';
+import AuthService from '@services/implementations/AuthService.js';
+import TokenService from '@services/implementations/TokenService.js';
+import UserService from '@services/implementations/UserService.js';
 
 export default class AuthController {
     private userService: UserService;

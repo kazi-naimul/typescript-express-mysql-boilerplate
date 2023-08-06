@@ -1,0 +1,30 @@
+{
+  "jsc": {
+    "parser": {
+      "syntax": "typescript",
+      "dynamicImport": false,
+      "decorators": false
+    },
+    "target": "es2015",
+    "loose": false,
+    "externalHelpers": false,
+    "baseUrl": "./",
+    "paths": {
+      "@configs/*": ["src/configs/*"],
+      "@helpers/*": ["src/helpers/*"],
+      "@controllers/*": ["src/controllers/*"],
+      "@routes/*": ["src/routes/*"],
+      "@utils/*": ["src/utils/*"],
+      "@middlewares/*": ["src/middlewares/*"],
+      "@services/*": ["src/services/*"],
+      "@dao/*": ["src/dao/*"],
+      "@models/*": ["src/models/*"],
+      "@validators/*": ["src/validators/*"],
+      "@types/*": ["src/types/*"]
+    }
+  },
+  "minify": false,
+  "module": {
+    "type": "es6"
+  }
+}

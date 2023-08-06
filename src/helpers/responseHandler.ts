@@ -2,7 +2,7 @@ import {
     ApiServiceResponse,
     DataTableDaoResponse,
     DataTableResponse,
-} from '../@types/apiServiceResponse';
+} from '../types/apiServiceResponse';
 
 const logError = (err) => {
     console.error(err);
