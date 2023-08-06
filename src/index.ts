@@ -1,9 +1,9 @@
 import http from 'http';
 import { Server } from 'socket.io';
-import { app } from './app';
-import { config } from './config/config';
-import { rootSocket } from './config/rootSocket';
-import { scheduleCronJobs } from './cronJobs';
+import { rootSocket } from '@configs/rootSocket.js';
+import { config } from '@configs/config.js';
+import { app } from './app.js';
+import { scheduleCronJobs } from './cronJobs.js';
 
 scheduleCronJobs();
 

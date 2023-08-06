@@ -3,12 +3,12 @@ import httpStatus from 'http-status';
 import * as bcrypt from 'bcrypt';
 import { uuid } from 'uuidv4';
 import { Request } from 'express';
-import { logger } from '@config/logger';
-import { userConstant } from '@config/constant';
-import UserDao from '@dao/implementations/UserDao';
-import responseHandler from '@helper/responseHandler';
-import { IUser } from '@models/interfaces/IUser';
-import IUserService from '@service/contracts/IUserService';
+import { logger } from '@configs/logger.js';
+import { userConstant } from '@configs/constant.js';
+import UserDao from '@dao/implementations/UserDao.js';
+import responseHandler from '@helpers/responseHandler.js';
+import { IUser } from '@models/interfaces/IUser.js';
+import IUserService from '@services/contracts/IUserService.js';
 
 export default class UserService implements IUserService {
     private userDao: UserDao;

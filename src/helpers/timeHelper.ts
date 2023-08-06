@@ -1,5 +1,7 @@
 import { parseISO } from 'date-fns';
-import { format, utcToZonedTime, zonedTimeToUtc } from 'date-fns-tz';
+import * as dateFns from 'date-fns-tz';
+
+const { format, utcToZonedTime, zonedTimeToUtc } = dateFns;
 /**
  * Covert timezone
  * @param {String/Date} inputTime

@@ -1,11 +1,11 @@
 import { Strategy, ExtractJwt, VerifyCallbackWithRequest, StrategyOptions } from 'passport-jwt';
 import jwt from 'jsonwebtoken';
-import UserDao from '../dao/implementations/UserDao';
-import { config } from './config';
-import { tokenTypes } from './tokens';
-import TokenDao from '../dao/implementations/TokenDao';
-import RedisService from '../service/implementations/RedisService';
-import models from '../models';
+import UserDao from '@dao/implementations/UserDao.js';
+import { config } from '@configs/config.js';
+import { tokenTypes } from '@configs/tokens.js';
+import TokenDao from '@dao/implementations/TokenDao.js';
+import RedisService from '@services/implementations/RedisService.js';
+import models from '@models/index.js';
 
 const User = models.user;
 const jwtOptions: StrategyOptions = {

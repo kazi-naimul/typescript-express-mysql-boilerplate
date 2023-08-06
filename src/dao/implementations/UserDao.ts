@@ -1,6 +1,6 @@
-import models from '../../models';
-import IUserDao from '../contracts/IUserDao';
-import SuperDao from './SuperDao';
+import IUserDao from '@dao/contracts/IUserDao.js';
+import models from '@models/index.js';
+import SuperDao from './SuperDao.js';
 
 const User = models.user;
 

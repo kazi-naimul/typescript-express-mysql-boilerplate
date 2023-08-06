@@ -1,13 +1,13 @@
 import httpStatus from 'http-status';
 import * as bcrypt from 'bcrypt';
 import { Request, Response } from 'express';
-import { logger } from '../../config/logger';
-import TokenDao from '../../dao/implementations/TokenDao';
-import UserDao from '../../dao/implementations/UserDao';
-import responseHandler from '../../helper/responseHandler';
-import IAuthService from '../contracts/IAuthService';
-import RedisService from './RedisService';
-import { tokenTypes } from '../../config/tokens';
+import { logger } from '@configs/logger.js';
+import TokenDao from '@dao/implementations/TokenDao.js';
+import UserDao from '@dao/implementations/UserDao.js';
+import responseHandler from '@helpers/responseHandler.js';
+import IAuthService from '@services/contracts/IAuthService.js';
+import { tokenTypes } from '@configs/tokens.js';
+import RedisService from '@services/implementations/RedisService.js';
 
 export default class AuthService implements IAuthService {
     private userDao: UserDao;

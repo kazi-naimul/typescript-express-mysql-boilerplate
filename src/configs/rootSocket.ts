@@ -1,4 +1,4 @@
-import * as socketIo from 'socket.io';
+import socketIo from 'socket.io';
 
 export const rootSocket = (io: socketIo.Server) => {
     io.on('connection', (socket) => {

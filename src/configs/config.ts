@@ -1,8 +1,6 @@
-import dotenv from 'dotenv';
 import Joi from 'joi';
-import path from 'path';
 
-dotenv.config({ path: path.join(__dirname, '../../.env') });
+import 'dotenv/config';
 
 const envValidation = Joi.object()
     .keys({

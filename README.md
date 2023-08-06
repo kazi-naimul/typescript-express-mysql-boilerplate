@@ -30,6 +30,7 @@ cp .env.example .env
 
 ## Features
 
+- **ECMAScript Modules (ESM)**
 - **ORM**: [Sequelize](https://sequelize.org/)  orm for object data modeling
 - **Migration and Seed**: DB migration and Seed using [Sequelize-CLI](https://github.com/sequelize/cli) 
 - **Authentication and authorization**: using [passport](http://www.passportjs.org)
@@ -45,6 +46,7 @@ cp .env.example .env
 - **CORS**: Cross-Origin Resource-Sharing enabled using [cors](https://github.com/expressjs/cors)
 - **Docker support**
 - **Linting**: with [ESLint](https://eslint.org) and [Prettier](https://prettier.io)
+- **Fast Compilation**: with [SWC](https://swc.rs/) 
 
 ## Commands
 
@@ -108,7 +110,6 @@ REDIS_PASSWORD=your-password
 ## Project Structure
 
 ```
-specs\
 src\
  |--config\         # Environment variables and configuration related things
  |--controllers\    # Route controllers (controller layer)
@@ -120,7 +121,7 @@ src\
  |--routes\         # Routes
  |--services\       # Business logic (service layer)
   	|--contract\		# Contracts for all service
- 	|--implementation 	# Implementation of the contracts
+ 	|--implementation 	# Implementation of the contracts and unit test files
  |--helper\         # Helper classes and functions
  |--validations\    # Request data validation schemas
  |--app.js          # Express app

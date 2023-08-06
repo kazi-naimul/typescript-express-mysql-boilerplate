@@ -2,12 +2,13 @@ import cors from 'cors';
 import passport from 'passport';
 import express, { Express, NextFunction, Request, Response } from 'express';
 import httpStatus from 'http-status';
-import { jwtStrategy } from './config/passport';
-import ApiError from './helper/ApiError';
-import { errorConverter, errorHandler } from './middlewares/error';
-import db from './models';
-import routes from './route';
-import redisClient from './config/redisClient';
+import helmet from 'helmet';
+import db from '@models/index';
+import routes from '@routes/index.js';
+import { jwtStrategy } from '@configs/passport.js';
+import ApiError from '@helpers/ApiError.js';
+import { errorConverter, errorHandler } from '@middlewares/error.js';
+import redisClient from '@configs/redisClient.js';
 
 process.env.PWD = process.cwd();
 
@@ -20,6 +21,10 @@ app.use(
         origin: '*',
     })
 );
+
+// To enable securities in HTTP headers
+app.use(helmet());
+
 app.use(express.static(`${process.env.PWD}/public`));
 
 app.use(express.urlencoded({ extended: true }));

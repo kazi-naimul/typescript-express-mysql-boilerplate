@@ -1,6 +1,6 @@
 {
     "env": {
-        "es2021": true,
+        "commonjs": false,
         "node": true
     },
     "extends": [

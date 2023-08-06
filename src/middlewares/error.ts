@@ -1,8 +1,8 @@
-import { NextFunction, Request, Response } from 'express';
 import httpStatus from 'http-status';
-import { config } from '../config/config';
-import { logger } from '../config/logger';
-import ApiError from '../helper/ApiError';
+import { NextFunction, Request, Response } from 'express';
+import { config } from '@configs/config.js';
+import { logger } from '@configs/logger.js';
+import ApiError from '@helpers/ApiError.js';
 
 // eslint-disable-next-line no-unused-vars
 export const errorHandler = (err: any, req: Request, res: Response) => {

@@ -2,11 +2,11 @@ import { expect } from 'chai';
 import httpStatus from 'http-status';
 import 'mocha';
 import sinon from 'sinon';
-import AuthService from '../../src/service/implementations/AuthService';
-import UserDao from '../../src/dao/implementations/UserDao';
-import models from '../../src/models';
+import AuthService from '@services/implementations/AuthService.js';
+import UserDao from '@dao/implementations/UserDao.js';
+import models from '@models/index.js';
 import * as bcrypt from 'bcrypt'
-import { IUser } from '../../src/models/interfaces/IUser';
+import { IUser } from '@models/interfaces/IUser.js';
 
 const User = models.user;
 
@@ -22,6 +22,7 @@ const userData:IUser = {
     uuid: '4d85f12b-6e5b-468b-a971-eabe8acc9d08',
     
 };
+
 describe('User Login test', () => {
     beforeEach(() => {
         authService = new AuthService();
