@@ -9,7 +9,7 @@
         "watch-compile": "swc src -w --out-dir build --source-maps inline",
         "watch-dev": "nodemon --watch \"build/**/*\" -e js --exec \"node -r source-map-support/register -r tsconfig-paths/register ./build/index.js\"",
         "start": "node -r source-map-support/register -r tsconfig-paths/register ./build/index.js",
-        "build": "rimraf ./build && swc ./src -d build --source-maps",
+        "build": "npm run check && rimraf ./build && swc ./src -d build --source-maps",
         "check": "tsc --noEmit",
         "test:mocha": "mocha './build/**/*.spec.js' --require ts-node/register",
         "test:watch": "nodemon --watch ./build --exec npm run test:mocha",
