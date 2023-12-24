@@ -2,14 +2,14 @@
 
 A boilerplate for any enterprise rest api or service with Node.js -Typescript, Express and Sequelize ORM for mysql, postgresql or others.
 
-By running this project you will get a production ready environment with all necessary supports for validation, unit testing, socket, redis and many more.This repo is the typescript version of my another boilerplate of [Nodejs Express Mysql boilerplate](https://github.com/aoyan107/node-express-mysql-boilerplate)
+By running this project you will get a production ready environment with all necessary supports for validation, unit testing, socket, redis and many more.This repo is the typescript version of my another boilerplate of [Nodejs Express Mysql boilerplate](https://github.com/kazi-naimul/node-express-mysql-boilerplate)
 
 ## Manual Installation
 
 Clone the repo:
 
 ```bash
-git clone https://github.com/aoyan107/typescript-express-mysql-boilerplate
+git clone https://github.com/kazi-naimul/typescript-express-mysql-boilerplate
 cd typescript-express-mysql-boilerplate
 ```
 
